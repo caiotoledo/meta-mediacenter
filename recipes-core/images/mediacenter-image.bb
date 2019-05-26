@@ -5,6 +5,7 @@ LICENSE = "MIT"
 CORE_IMAGE_EXTRA_INSTALL += "\
 	packagegroup-core-boot \
 	packagegroup-core-ssh-openssh \
+	minidlna \
 	rtorrent \
 	${@bb.utils.contains('MACHINE', 'beaglebone-green-wifi', "wl18xx-fw", "", d )} \
 	${@bb.utils.contains('MACHINE', 'beaglebone-green-wifi', "dhcp-client", "", d )} \
