@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index da28e3196..d4ab20579 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -302,7 +302,7 @@ else()
+     tr_add_external_auto_library(EVENT2 event
+         BUILD_IN_SOURCE 1
+         CONFIGURE_COMMAND "<SOURCE_DIR>/autogen.sh"
+-                  COMMAND "<SOURCE_DIR>/configure" "--prefix=<INSTALL_DIR>" "--disable-shared")
++                  COMMAND "<SOURCE_DIR>/configure" "--prefix=<INSTALL_DIR>" "--disable-shared" "--host=arm")
+ endif()
+ 
+ tr_add_external_auto_library(NATPMP natpmp
