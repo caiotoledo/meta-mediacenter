@@ -15,6 +15,9 @@ RDEPENDS_${PN} = "transmission"
 do_install_append() {
 	install -d ${D}/etc/init.d
 	install -m 0755 ${WORKDIR}/init-transmission ${D}/etc/init.d/
+
+	sed -i 's/%USERNAME%/${USERNAME}/g' ${D}/etc/init.d/init-transmission
+	sed -i 's/%PASSWORD%/${PASSWORD}/g' ${D}/etc/init.d/init-transmission
 }
 
 inherit update-rc.d

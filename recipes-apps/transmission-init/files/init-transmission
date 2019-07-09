@@ -5,7 +5,7 @@
 
 start() {
 	printf "Starting Transmission: "
-	start-stop-daemon -b -S -q -m -p /var/run/transmission.pid --exec transmission-daemon -- -a 192.168.*.*
+	start-stop-daemon -b -S -q -m -p /var/run/transmission.pid --exec transmission-daemon -- -l 200 -L 5000 --auth --username=%USERNAME% --password=%PASSWORD% -a *.*.*.*
 	echo "OK"
 }
 
