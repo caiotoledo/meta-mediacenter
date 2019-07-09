@@ -9,6 +9,7 @@ CORE_IMAGE_EXTRA_INSTALL += "\
 	packagegroup-core-ssh-openssh \
 	minidlna \
 	transmission-init \
+	udev-extraconf \
 	${@bb.utils.contains('MACHINE', 'beaglebone-green-wifi', "wl18xx-fw", "", d )} \
 	${@bb.utils.contains('MACHINE', 'beaglebone-green-wifi', "dhcp-client", "", d )} \
 	${@bb.utils.contains('MACHINE', 'beaglebone-green-wifi', "wifi-init", "", d )} \
