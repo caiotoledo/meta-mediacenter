@@ -11,6 +11,7 @@ inherit gettext autotools-brokensep update-rc.d systemd
 SRC_URI = "git://git.code.sf.net/p/minidlna/git;branch=master;module=git \
            file://minidlna-daemon.init.d \
            file://minidlna.service \
+           file://minidlna.conf \
            file://0001-Update-Gettext-version.patch \
            "
 
@@ -22,7 +23,7 @@ EXTRA_AUTORECONF = ""
 
 do_install_append(){
     install -d ${D}${sysconfdir}
-    install -m 0755 minidlna.conf ${D}${sysconfdir}
+    install -m 0755 ${WORKDIR}/minidlna.conf ${D}${sysconfdir}
 
 # Systemd script
     install -d ${D}${nonarch_base_libdir}/systemd/system
