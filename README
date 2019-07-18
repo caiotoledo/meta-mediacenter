@@ -14,20 +14,28 @@ This layer depends on:
 
   URI: git://git.openembedded.org/openembedded-core
   layers: meta
+  branch: rocko
+
+  URI: git@github.com:wouterlucas/meta-cryptocurrency.git
+  layers: meta-cryptocurrency
   branch: master
 
-  URI: git://git.yoctoproject.org/xxxx
-  layers: xxxx
-  branch: master
+  URI: git://git.yoctoproject.org/meta-ti
+  layers: meta-ti
+  branch: rocko
+
+  URI: git@github.com:caiotoledo/meta-cryptoblack.git
+  layers: meta-cryptoblack
+  branch: rocko
 
 
 Patches
 =======
 
 Please submit any patches against the meta-mediacenter layer to the
-xxxx mailing list (xxxx@zzzz.org) and cc: the maintainer:
+Caio Toledo mailing list (caioviniciusdetoledo@gmail) and cc: the maintainer:
 
-Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
+Maintainer: Caio Toledo <caioviniciusdetoledo@gmail.com>
 
 
 Table of Contents
@@ -54,6 +62,13 @@ other layers needed. e.g.:
     /path/to/yocto/meta \
     /path/to/yocto/meta-poky \
     /path/to/yocto/meta-yocto-bsp \
+    /path/to/yocto/meta-cryptocurrency \
+    /path/to/yocto/meta-cryptoblack \
+    /path/to/yocto/meta-ti \
+    /path/to/yocto/meta-openembedded/meta-networking \
+    /path/to/yocto/meta-openembedded/meta-python \
+    /path/to/yocto/meta-openembedded/meta-oe \
+    /path/to/yocto/meta-openembedded/meta-multimedia \
     /path/to/yocto/meta-meta-mediacenter \
     "
 
@@ -61,4 +76,8 @@ other layers needed. e.g.:
 II. Misc
 ========
 
---- replace with specific information about the meta-mediacenter layer ---
+Variables to be configured in conf/local.conf:
+- SSID -> Wifi name for automatic connection;
+- PSK -> Use wpa_passphrase to get psk value;
+- USERNAME -> Username to access transmission web torrent client;
+- PASSWORD -> Password to access transmission web torrent client.
