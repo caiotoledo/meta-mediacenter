@@ -81,3 +81,4 @@ Variables to be configured in conf/local.conf:
 - PSK -> Use wpa_passphrase to get psk value;
 - USERNAME -> Username to access transmission web torrent client <Default=admin>;
 - PASSWORD -> Password to access transmission web torrent client <Default=admin>;
+- FRIENDLY_NAME -> MiniDLNA friendly name <Default=MediaCenter>
