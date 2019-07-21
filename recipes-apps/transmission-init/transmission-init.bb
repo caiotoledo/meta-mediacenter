@@ -12,6 +12,9 @@ SRC_URI = "file://init-transmission"
 DEPENDS = "transmission"
 RDEPENDS_${PN} = "transmission"
 
+USERNAME??="admin"
+PASSWORD??="admin"
+
 do_install_append() {
 	install -d ${D}/etc/init.d
 	install -m 0755 ${WORKDIR}/init-transmission ${D}/etc/init.d/
