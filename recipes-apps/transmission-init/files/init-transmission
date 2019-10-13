@@ -5,13 +5,13 @@
 
 start() {
 	printf "Starting Transmission: "
-	start-stop-daemon -b -S -q -m -p /var/run/transmission.pid --exec transmission-daemon -- -l 200 -L 5000 --auth --username=%USERNAME% --password=%PASSWORD% -a *.*.*.*
+	transmission-daemon -l 200 -L 5000 --auth --username=%USERNAME% --password=%PASSWORD% -a *.*.*.* -x /var/run/transmission.pid
 	echo "OK"
 }
 
 stop() {
 	printf "Stopping Transmission: "
-	start-stop-daemon -K -q -p /var/run/transmission.pid
+	kill -9 $(cat /var/run/transmission.pid)
 	echo "OK"
 }
 
