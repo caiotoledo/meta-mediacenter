@@ -10,7 +10,7 @@ start() {
 }
 
 stop() {
-	printf "Stopping Miner: "
+	printf "Stopping Transmission: "
 	start-stop-daemon -K -q -p /var/run/transmission.pid
 	echo "OK"
 }
