@@ -17,9 +17,6 @@ CORE_IMAGE_EXTRA_INSTALL += "\
 
 IMAGE_INSTALL_append = " kernel-modules"
 
-# Use to convert movies codecs:
-IMAGE_INSTALL_append = " ffmpeg"
-
 # Boot files for Beaglebone:
 BOOT_FILES_BEAGLEBONE = "zImage am335x-bone.dtb am335x-boneblack.dtb uEnv.txt"
 

@@ -1,0 +1,4 @@
+{
+    "script-torrent-done-enabled": true,
+    "script-torrent-done-filename": "/etc/transmission/post-transmission.sh"
+}

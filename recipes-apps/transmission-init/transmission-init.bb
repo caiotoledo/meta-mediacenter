@@ -7,15 +7,26 @@ INITSCRIPT_NAME = "init-transmission"
 INITSCRIPT_PARAMS = "defaults 99 10"
 
 FILEEXTRAPATHS_prepend = "${THISDIR}/files"
-SRC_URI = "file://init-transmission"
+SRC_URI = "file://init-transmission \
+	file://subtitle-find.sh \
+	file://post-transmission.sh \
+	file://settings.json"
 
-DEPENDS = "transmission"
-RDEPENDS_${PN} = "transmission"
+RDEPENDS_${PN} = "transmission \
+	bash \
+	ffmpeg \
+	python \
+	python-pip"
 
 USERNAME??="admin"
 PASSWORD??="admin"
 
 do_install_append() {
+	install -d ${D}/${sysconfdir}/transmission/
+	install -m 0755 ${WORKDIR}/settings.json ${D}/${sysconfdir}/transmission/
+	install -m 0755 ${WORKDIR}/subtitle-find.sh ${D}/${sysconfdir}/transmission/
+	install -m 0755 ${WORKDIR}/post-transmission.sh ${D}/${sysconfdir}/transmission/
+
 	install -d ${D}/etc/init.d
 	install -m 0755 ${WORKDIR}/init-transmission ${D}/etc/init.d/
 
