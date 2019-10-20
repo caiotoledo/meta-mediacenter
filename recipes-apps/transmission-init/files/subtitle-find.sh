@@ -37,4 +37,5 @@ then
 	subliminal download -s -l $LANG $FILE
 else
 	echo "${FILE} Not a video file!"
+	exit 1
 fi
