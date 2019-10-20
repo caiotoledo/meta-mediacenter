@@ -34,7 +34,7 @@ then
 	pip install subliminal
 	echo "Searching a subtitle for ${FILE}"
 	# Download the Subtitle
-	subliminal download -l $LANG $FILE
+	subliminal download -s -l $LANG $FILE
 else
 	echo "${FILE} Not a video file!"
 fi
