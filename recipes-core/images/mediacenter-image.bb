@@ -2,8 +2,6 @@ SUMMARY = "A image to create a MediaCenter"
 
 LICENSE = "MIT"
 
-IMAGE_OVERHEAD_FACTOR="3"
-
 CORE_IMAGE_EXTRA_INSTALL += "\
 	packagegroup-core-boot \
 	packagegroup-core-ssh-openssh \
