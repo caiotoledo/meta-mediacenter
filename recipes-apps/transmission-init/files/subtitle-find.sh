@@ -14,11 +14,18 @@ is_video(){
 }
 
 FILE=$1
-LANG=$2
+OPENSUBTITLES_USERNAME=$2
+OPENSUBTITLES_PASSWORD=$3
+LANG=$4
 
 if [ ! -f "$FILE" ]; then
 	echo "$FILE do not exists!"
 	exit 1
+fi
+
+OPENSUBTITLE_ARG=''
+if [[ -n "$OPENSUBTITLES_USERNAME" && -n "$OPENSUBTITLES_PASSWORD" ]]; then
+	OPENSUBTITLE_ARG="--opensubtitles ${OPENSUBTITLES_USERNAME} ${OPENSUBTITLES_PASSWORD}"
 fi
 
 if [ -z "$LANG" ]; then
@@ -34,7 +41,7 @@ then
 	pip install subliminal
 	echo "Searching a subtitle for ${FILE}"
 	# Download the Subtitle
-	subliminal download -s -l "$LANG" "$FILE"
+	subliminal $OPENSUBTITLE_ARG download -s -l "$LANG" "$FILE"
 else
 	echo "${FILE} Not a video file!"
 	exit 1

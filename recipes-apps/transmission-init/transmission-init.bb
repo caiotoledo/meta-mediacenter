@@ -22,6 +22,9 @@ RDEPENDS_${PN} = "transmission \
 USERNAME??="admin"
 PASSWORD??="admin"
 
+OPENSUBTITLES_USERNAME??=""
+OPENSUBTITLES_PASSWORD??=""
+
 do_install_append() {
 	install -d ${D}/${sysconfdir}/transmission/
 	install -m 0755 ${WORKDIR}/settings.json ${D}/${sysconfdir}/transmission/
@@ -34,6 +37,9 @@ do_install_append() {
 
 	sed -i 's/%USERNAME%/${USERNAME}/g' ${D}/etc/init.d/init-transmission
 	sed -i 's/%PASSWORD%/${PASSWORD}/g' ${D}/etc/init.d/init-transmission
+
+	sed -i 's/%OPENSUBTITLES_USERNAME%/${OPENSUBTITLES_USERNAME}/g' ${D}/${sysconfdir}/transmission/post-transmission.sh
+	sed -i 's/%OPENSUBTITLES_PASSWORD%/${OPENSUBTITLES_PASSWORD}/g' ${D}/${sysconfdir}/transmission/post-transmission.sh
 }
 
 inherit update-rc.d
