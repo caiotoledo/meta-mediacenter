@@ -38,7 +38,9 @@ isVideo=$(is_video "$FILE")
 if [ $isVideo == 1 ]
 then
 	# Install subliminal if needed
-	pip install subliminal
+	if ! pip list --format=columns | grep "subliminal"; then
+		pip install subliminal
+	fi
 	echo "Searching a subtitle for ${FILE}"
 	# Download the Subtitle
 	subliminal $OPENSUBTITLE_ARG download -s -l "$LANG" "$FILE"
