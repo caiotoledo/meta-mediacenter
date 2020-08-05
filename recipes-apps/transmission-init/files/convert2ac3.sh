@@ -35,7 +35,7 @@ FILENAME="${FILE%.*}"
 aac_ac3_info=$(get_codec_name "$FILE" | grep "aac\|ac3")
 if [ -z "$aac_ac3_info" ];then
 	echo "$FILE converting to ac3 -> $FILENAME.mp4!!!"
-	time ffmpeg -i "$FILE" -c:v copy -c:a ac3 "$FILENAME.mp4" -y
+	time ffmpeg -i "$FILE" -c:v copy -c:a ac3 "$FILENAME.mp4" -y && rm -v "$FILE"
 else
 	echo "$FILE already ac3"
 	exit 1
