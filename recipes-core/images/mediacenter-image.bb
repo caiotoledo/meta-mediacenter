@@ -26,10 +26,6 @@ BOOT_FILES_BEAGLEBONE_GREEN = "am335x-bonegreen-wireless.dtb am335x-bonegreen.dt
 IMAGE_BOOT_FILES_append = "${@bb.utils.contains('MACHINE', 'beaglebone-green-wifi', " ${BOOT_FILES_BEAGLEBONE}", "", d )}"
 IMAGE_BOOT_FILES_append = "${@bb.utils.contains('MACHINE', 'beaglebone-green-wifi', " ${BOOT_FILES_BEAGLEBONE_GREEN}", "", d )}"
 
-# Device Tree only for ARM:
-IMAGE_INSTALL_FOR_ARM = "kernel-devicetree"
-IMAGE_INSTALL_append = "${@bb.utils.contains('ARCH', 'arm', " ${IMAGE_INSTALL_FOR_ARM}", "", d )}"
-
 TOOLCHAIN_TARGET_TASK_append = " kernel-devsrc"
 
 inherit core-image
