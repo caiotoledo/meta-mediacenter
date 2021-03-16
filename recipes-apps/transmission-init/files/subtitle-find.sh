@@ -38,9 +38,8 @@ isVideo=$(is_video "$FILE")
 if [ $isVideo == 1 ]
 then
 	# Install subliminal if needed
-	if ! pip list --format=columns | grep "subliminal"; then
-		pip install -Iv rarfile==2.7 # subliminal depends on rarfile, and only rarfile 2.7 works on python 2.7 version.
-		pip install subliminal
+	if ! pip3 list --format=columns | grep "subliminal"; then
+		pip3 install subliminal
 	fi
 	echo "Searching a subtitle for ${FILE}"
 	# Download the Subtitle

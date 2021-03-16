@@ -16,8 +16,8 @@ SRC_URI = "file://init-transmission \
 RDEPENDS_${PN} = "transmission \
 	bash \
 	ffmpeg \
-	python \
-	python-pip"
+	python3 \
+	python3-pip"
 
 USERNAME??="admin"
 PASSWORD??="admin"
